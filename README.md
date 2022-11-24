@@ -34,6 +34,7 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
+```
 
 ## Test
 
@@ -46,9 +47,7 @@ There are no tests written for this project.
 # development
 $ npm run start
 ```
-then
-
-[http://localhost:3000/api](http://localhost:3000/api)
+then go to [http://localhost:3000/api](http://localhost:3000/api)
 
 ## License
 
