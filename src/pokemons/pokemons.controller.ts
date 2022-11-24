@@ -1,5 +1,6 @@
 import {
   Body,
+  ConflictException,
   Controller,
   Get,
   NotFoundException,
@@ -21,7 +22,15 @@ export class PokemonsController {
   @Post()
   @Serialize(PokemonDto)
   @UseGuards(SignedInGuard)
-  addPokemon(@Body() body: CreatePokemonDto, @Session() session: any) {
+  async addPokemon(@Body() body: CreatePokemonDto, @Session() session: any) {
+    const existingPokemon = await this.pokemonsService.findBy(body.name);
+
+    if (existingPokemon) {
+      throw new ConflictException(
+        `there is already pokemon named ${body.name}`,
+      );
+    }
+
     return this.pokemonsService.createPokemon(body.name, body.img);
   }
 

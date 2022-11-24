@@ -12,6 +12,7 @@ export class PokemonsService {
 
     return this.repo.save(pokemon);
   }
+
   async findOne(id: number) {
     const pokemon = await this.repo.findOne({ where: { id } });
     if (!pokemon) {
@@ -20,6 +21,16 @@ export class PokemonsService {
 
     return pokemon;
   }
+
+  async findBy(name: string) {
+    const pokemon = await this.repo.findOne({ where: { name } });
+    if (!pokemon) {
+      return null;
+    }
+
+    return pokemon;
+  }
+
   getAllSorted() {
     return this.repo.find({
       take: 10,
