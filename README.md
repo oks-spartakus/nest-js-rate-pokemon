@@ -43,3 +43,25 @@ $ npm run start
 ```
 then go to [http://localhost:3000/api](http://localhost:3000/api)
 
+## Comparison
+
+### Basic Info
+
+- npm weekly downloads-
+- last publish - 
+- issues - 
+- PRs - 
+- last commit - 
+- forks - 
+- github stars - 
+- written in - 
+- intended for - 
+- best for - 
+
+### Pros
+
+- 
+
+### Cons
+
+- 
